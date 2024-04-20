@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  devserver:
+    image: dev:latest
+    entrypoint: /bin/bash
+    ports:
+      - "8080:80"
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+
