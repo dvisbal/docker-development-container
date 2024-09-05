@@ -1,0 +1,3 @@
+bindmounts/.aws/*
+bindmounts/.ssh/*
+copyfiles/*
