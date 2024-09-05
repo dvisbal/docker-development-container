@@ -151,3 +151,5 @@ PROMPT_COMMAND=set_bash_prompt
 alias dl='docker container ls; echo ""; docker image ls'
 alias pp="cd ~/Documents/Projects"
 alias ds="cd ~/Documents/Projects/dev/basic-dev-shell-dvisbal-external"
+
+export PATH=~/.local/bin:$PATH
