@@ -29,7 +29,7 @@ WORKDIR /home/${USER_NAME}
 RUN unzip awscli-exe-linux-x86_64.zip
 RUN ./aws/install
 
-COPY dotfiles/.bash_aliases /home/${USER_NAME}/.bash_aliases
+COPY copyfiles/.bash_aliases /home/${USER_NAME}/.bash_aliases
 RUN chmod 777 /home/${USER_NAME}/.bash_aliases
 
 USER ${USER_NAME}

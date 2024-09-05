@@ -13,10 +13,10 @@ services:
         source: C:/Users/${USERNAME}/linux
         target: /home/${USER_NAME}/linux
       - type: bind
-        source: ./ssh
+        source: ./bindmounts/.ssh
         target: /home/${USER_NAME}/.ssh
       - type: bind
-        source: ./dotfiles/.aws
+        source: ./bindmounts/.aws
         target: /home/${USER_NAME}/.aws
       - //var/run/docker.sock:/var/run/docker.sock
     user: "${USER_NAME}:root"
