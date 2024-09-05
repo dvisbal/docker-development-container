@@ -1,7 +1,7 @@
-FROM ubuntu:latest as base
+FROM ubuntu:latest AS base
 
-ARG USER_NAME=boulder
-ENV USER_NAME=boulder
+ARG USER_NAME
+ENV USER_NAME=${USER_NAME}
 
 # Install Packages for dev image
 RUN apt-get update && \

@@ -1,18 +1,22 @@
 services:
   devserver:
-    image: dev:latest
+    image: ${CONTAINER_NAME}:latest
+    build:
+      context: .
+      args:
+        - USER_NAME=${USER_NAME}
     entrypoint: /bin/bash
     ports:
       - "8080:80"
     volumes:
       - type: bind
         source: C:/Users/${USERNAME}/linux
-        target: /home/boulder/linux
+        target: /home/${USER_NAME}/linux
       - type: bind
         source: ./ssh
-        target: /home/boulder/.ssh
+        target: /home/${USER_NAME}/.ssh
       - type: bind
         source: ./dotfiles/.aws
-        target: /home/boulder/.aws
+        target: /home/${USER_NAME}/.aws
       - //var/run/docker.sock:/var/run/docker.sock
-    user: "boulder:root"
+    user: "${USER_NAME}:root"
